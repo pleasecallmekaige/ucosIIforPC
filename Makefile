@@ -1,25 +1,26 @@
 # Project: uCOSII
 
 BuildPath = ./build
+MinGWPath = D:/App/MinGW
 
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
 OBJ      = ${BuildPath}/main.o ${BuildPath}/Source/os_dbg_r.o ${BuildPath}/Source/ucos_ii.o ${BuildPath}/Ports/WIN32/os_cpu_c.o ${BuildPath}/Ports/WIN32/os_trace.o
 LINKOBJ  = ${BuildPath}/main.o ${BuildPath}/Source/os_dbg_r.o ${BuildPath}/Source/ucos_ii.o ${BuildPath}/Ports/WIN32/os_cpu_c.o ${BuildPath}/Ports/WIN32/os_trace.o
-LIBS     = -L"D:/App/MinGW/mingw64/lib" \
-           -L"D:/App/MinGW/mingw64/x86_64-w64-mingw32/lib" \
+LIBS     = -L"${MinGWPath}/mingw64/lib" \
+           -L"${MinGWPath}/mingw64/x86_64-w64-mingw32/lib" \
 		   -static-libgcc -lWinMM -lkernel32 -luser32 -lgdi32 -lwinspool -lcomdlg32 -ladvapi32 -lshell32 -lole32 -loleaut32 -luuid -lodbc32 -lodbccp32 -lkernel32 -luser32 -lgdi32 -lwinspool -lcomdlg32 -ladvapi32 -lshell32 -lole32 -loleaut32 -luuid -lodbc32 -lodbccp32
-INCS     = -I"D:/App/MinGW/mingw64/include" \
-           -I"D:/App/MinGW/mingw64/x86_64-w64-mingw32/include" \
-		   -I"D:/App/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" \
+INCS     = -I"${MinGWPath}/mingw64/include" \
+           -I"${MinGWPath}/mingw64/x86_64-w64-mingw32/include" \
+		   -I"${MinGWPath}/mingw64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" \
 		   -I".//" \
 		   -I"./Source//" \
 		   -I"./Ports/Win32//"
-CXXINCS  = -I"D:/App/MinGW/mingw64/include" \
-           -I"D:/App/MinGW/mingw64/x86_64-w64-mingw32/include" \
-		   -I"D:/App/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" \
-		   -I"D:/App/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" \
+CXXINCS  = -I"${MinGWPath}/mingw64/include" \
+           -I"${MinGWPath}/mingw64/x86_64-w64-mingw32/include" \
+		   -I"${MinGWPath}/mingw64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" \
+		   -I"${MinGWPath}/mingw64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" \
 		   -I".//" \
 		   -I"./Source//" \
 		   -I"./Ports/Win32//"
